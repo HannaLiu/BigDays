@@ -1,0 +1,49 @@
+<!--pages/color/color.wxml-->
+<view class="container">
+  <view class='top-container'>
+
+    <view class="input clearfix" bindtap='showPalette'>
+      <view class='left'>
+        <i class="iconfont icon-colorlens"></i><span>选择颜色</span></view>
+      <view class='color-list one-color right' style="background:{{checkedColor}}"></view>
+    </view>
+    <view class="input clearfix">
+      <view class='left'>
+        <i class="iconfont icon-edit"></i><span>输入颜色</span></view>
+      <input class="input right-half right" type="text" placeholder="{{checkedColor}}" bindinput="bindKeyInput" value="{{checkedColor}}" />
+    </view>
+  </view>
+
+  <view class="bottom-container">
+    <view class="overview">效果预览</view>
+    <view class="card">
+      <view class="one-card" style="background-color:{{checkedColor}};box-shadow: 0rpx 8rpx 16rpx rgba({{checkedColorRgbArr[0]}},{{checkedColorRgbArr[1]}},{{checkedColorRgbArr[2]}},{{shadowOpacity}});">
+        <text class='days-title'>{{name?name:namePlaceholder}}</text>
+        <text wx:if="{{note}}" class='days-note'>{{note}}</text>
+        <text wx:if="{{datatag && date}}" class='days-time'>{{datatag}}{{date}}</text>
+        <text wx:if="{{msg}}" class='days-msg'>{{msg}}</text>
+        <text class='days-num'>{{diffnum}}</text>
+      </view>
+    </view>
+    <button class='save' bindtap="save" style="background-color:{{checkedColor}};" disabled="{{saveDisable}}">保存</button>
+  </view>
+  <view class='palette' wx:if="{{showPalette}}">
+    <view class='subpalette'>
+      <view class='showColor' style="background-color:{{checkedColor}};">
+        <view class='view-font'>此处为文字预览，若选择过浅的颜色将造成阅读障碍</view>
+      </view>
+      <view class="color-slider">
+        <slider bindchange="sliderChangeR" min="0" max="255" block-size="14" show-value selected-color="#f00" value="{{rgbarr[0]}}" />
+      </view>
+      <view class="color-slider">
+        <slider bindchange="sliderChangeG" min="0" max="255" block-size="14" show-value selected-color="#0f0" value="{{rgbarr[1]}}" />
+      </view>
+      <view class="color-slider">
+        <slider bindchange="sliderChangeB" min="0" max="255" block-size="14" show-value selected-color="#00f" value="{{rgbarr[2]}}" />
+      </view>
+      <view class='showColorHex'>此颜色的16进制颜色码为：{{checkedColor}}</view>
+      <button bindtap="saveRGB" class="save half-btn" style="color:#fff;background-color:{{checkedColor}};border: 1px solid {{checkedColor}};" disabled="{{saveDisable}}">确定</button>
+      <button bindtap="cancel" class="save half-btn cancel" style="border: 1px solid {{checkedColor}};" disabled="{{saveDisable}}">取消</button>
+    </view>
+  </view>
+</view>

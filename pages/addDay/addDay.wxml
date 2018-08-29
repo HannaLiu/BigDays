@@ -1,0 +1,39 @@
+<!--pages/addDay/addDay.wxml-->
+<view class="container">
+  <view class='top-container'>
+    <input class="input" placeholder="{{name?name:namePlaceholder}}" bindinput="bindNameInput" value="{{name}}" />
+    <block>
+      <view class="input">
+        <i class="iconfont icon-date"></i><span>选择起始或目标日期</span>
+        <picker class='right' mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date?date:"请选择"}}
+          </view>
+        </picker>
+      </view>
+    </block>
+    <view class='textarea-group'>
+      <textarea class="input textarea" bindblur="bindTextAreaBlur" bindinput="bindTextAreaChange" auto-height="true" placeholder="{{note?note:notePlaceholder}}" name="textarea" value="{{note}}" />
+    </view>
+    <view class="input">
+      <view class="color-more" bindtap='setMoreColor'>
+        <text class='more'>...</text>
+      </view>
+      <view class="color-list {{checkedColor==item?'checked':''}}" wx:for="{{colorList}}" wx:key="{{item.id}}" bindtap='bindSelectColor' data-color="{{item}}" style="background:{{item}}"></view>
+
+    </view>
+  </view>
+  <view class="bottom-container">
+    <view class="overview">预览</view>
+    <view class="card">
+      <view class="one-card" style="background-color:{{checkedColor}};box-shadow: 0rpx 8rpx 16rpx rgba({{checkedColorRgbArr[0]}},{{checkedColorRgbArr[1]}},{{checkedColorRgbArr[2]}},{{shadowOpacity}});">
+        <text class='days-title'>{{name?name:namePlaceholder}}</text>
+        <text wx:if="{{note}}" class='days-note'>{{note?note:notePlaceholder}}</text>
+        <text wx:if="{{datatag && date}}" class='days-time'>{{datatag}}{{date}}</text>
+        <text wx:if="{{msg}}" class='days-msg'>{{msg}}</text>
+        <text class='days-num'>{{diffnum}}</text>
+      </view>
+    </view>
+    <button class='save' bindtap="save" style="background-color:{{checkedColor}};" disabled="{{saveDisable}}">保存</button>
+  </view>
+</view>

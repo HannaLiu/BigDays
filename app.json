@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/more/more",
+    "pages/future/future",
+    "pages/past/past",
+    "pages/addDay/addDay",
+    "pages/color/color"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff",
+    "navigationBarTitleText": "Big Days",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#ff9e24",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "全部",
+        "iconPath": "pages/asset/img/all.png",
+        "selectedIconPath": "pages/asset/img/all-active.png"
+      },
+      {
+        "pagePath": "pages/past/past",
+        "text": "过去",
+        "iconPath": "pages/asset/img/past.png",
+        "selectedIconPath": "pages/asset/img/past-active.png"
+      },
+      {
+        "pagePath": "pages/future/future",
+        "text": "未来",
+        "iconPath": "pages/asset/img/future.png",
+        "selectedIconPath": "pages/asset/img/future-active.png"
+      },
+      {
+        "pagePath": "pages/more/more",
+        "text": "更多",
+        "iconPath": "pages/asset/img/ellipsis.png",
+        "selectedIconPath": "pages/asset/img/ellipsis-active.png"
+      }
+    ]
+  }
+}

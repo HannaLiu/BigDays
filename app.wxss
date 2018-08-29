@@ -1,0 +1,269 @@
+/**app.wxss**/
+@import "/pages/asset/css/iconfont.wxss";
+
+page {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  background-color: #fff;
+}
+
+.top-container {
+  background: #f7f7f7;
+  padding: 30rpx 0 1rpx;
+}
+
+.bottom-container {
+  background: #fff;
+  padding: 0rpx 0rpx 80rpx;
+}
+
+.cards {
+  height: 85%;
+  height: calc(100% - 160rpx);
+  overflow: auto;
+}
+
+.card {
+  color: #fff;
+  position: relative;
+  margin: 0 40rpx;
+}
+
+.one-card {
+  color: #fff;
+  margin: 0 auto 28rpx;
+  padding: 30rpx;
+  width: 90%;
+  width: calc(100% - 60rpx);
+  border-radius: 16rpx;
+  border: 0;
+  font-size: 30rpx;
+  border-width: 0;
+  background-color: #ff9e24;
+  box-shadow: 0rpx 8rpx 16rpx rgba(255, 158, 36, 0.3);
+  z-index: 1;
+  position: relative;
+  left: 0;
+}
+
+.days-title {
+  font-size: 30rpx;
+  display: block;
+  line-height: 140%;
+  margin-bottom: 8rpx;
+}
+
+.days-note {
+  font-size: 22rpx;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4rpx 12rpx;
+  border-radius: 10rpx;
+  display: inline-block;
+  max-width: 70%;
+  vertical-align: text-top;
+}
+
+.days-time {
+  display: block;
+  font-size: 24rpx;
+  margin-top: 60rpx;
+}
+
+.days-msg {
+  display: block;
+  font-size: 26rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 120rpx;
+}
+
+.days-num {
+  display: block;
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+  font-size: 80rpx;
+  line-height: 80rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.input {
+  padding-left: 30rpx;
+  background: #fff;
+  padding: 30rpx;
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+}
+
+.input .iconfont {
+  margin-right: 10rpx;
+  color: #333;
+  font-size: 40rpx;
+  vertical-align: middle;
+}
+
+.input span {
+  vertical-align: middle;
+}
+
+.save {
+  margin-top: 100rpx;
+  width: 200rpx;
+  font-size: 28rpx;
+  border-radius: 20rpx;
+  vertical-align: middle;
+  text-align: center;
+  background: #ff9e24;
+  color: #fff;
+}
+
+.color-list {
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  color: transparent;
+  vertical-align: middle;
+  margin: 15rpx;
+}
+
+button[disabled], button[disabled]:not([type]) {
+  color: #fff;
+  opacity: 0.6;
+}
+
+/* pages/home/home.wxss */
+
+.add-days {
+  background: #ff9e24;
+  box-shadow: 0rpx 8rpx 16rpx rgba(255, 158, 36, 0.3);
+  width: 110rpx;
+  height: 110rpx;
+  border-width: 0;
+  border-radius: 100%;
+  color: #fff;
+  position: relative;
+  top: 20rpx;
+  left: 40%;
+  font-size: 80rpx;
+  line-height: 100rpx;
+  vertical-align: middle;
+  text-align: center;
+  margin-bottom: 60rpx;
+}
+
+.day-operation {
+  height: 100%;
+  width: 162rpx;
+  background: #ff3c30;
+  text-align: center;
+  border-radius: 16rpx;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  z-index: 0;
+  position: absolute;
+  right: 2rpx;
+  top: 0;
+}
+
+.del {
+  position: relative;
+  top: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  vertical-align: middle;
+  margin-top: -50rpx;
+  z-index: 10;
+}
+
+.del .iconfont {
+  font-size: 50rpx;
+}
+
+.home-operations {
+  text-align: right;
+  position: fixed;
+  bottom: 30rpx;
+  right: 40rpx;
+}
+
+.home-operation {
+  text-align: center;
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  vertical-align: middle;
+  border-radius: 100rpx;
+  background: #ff9e24;
+  box-shadow: 0rpx 8rpx 16rpx rgba(255, 158, 36, 0.3);
+  margin-left: 30rpx;
+}
+
+.home-operation .iconfont {
+  color: #fff;
+  font-size: 60rpx;
+  line-height: 100rpx;
+  display: block;
+}
+
+.card-msg {
+  text-align: left;
+}
+
+.card-triangle-up {
+  width: 0;
+  height: 0;
+  border-width: 0 20rpx 20rpx;
+  border-style: solid;
+  border-color: transparent transparent #ff9e24;
+  position: absolute;
+  right: 30rpx;
+  top: -18rpx;
+}
+
+.card-triangle-down {
+  width: 0;
+  height: 0;
+  border-width: 20rpx 20rpx 0;
+  border-style: solid;
+  border-color: #ff9e24 transparent transparent;
+  position: absolute;
+  right: 30rpx;
+  bottom: -18rpx;
+}
+
+.msg-title {
+  font-size: 28rpx;
+  line-height: 180%;
+}
+
+.overview {
+  font-size: 26rpx;
+  padding-top: 30rpx;
+  color: #666;
+  margin: 0 40rpx 15rpx;
+}

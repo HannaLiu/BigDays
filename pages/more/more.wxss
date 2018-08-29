@@ -1,0 +1,11 @@
+/* pages/more/more.wxss */
+
+.yellow {
+  background-color: #ff9e24;
+  box-shadow: 0rpx 8rpx 16rpx rgba(255, 158, 36, 0.3);
+}
+
+.black {
+  background-color: #09080e;
+  box-shadow: 0rpx 8rpx 16rpx rgba(9, 8, 14, 0.3);
+}

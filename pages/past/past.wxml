@@ -1,0 +1,35 @@
+<view class="container" bindtouchstart='onScreen'>
+  <view wx:if="{{pastdayslist}}" class='cards'>
+    <view class="card" wx:for="{{pastdayslist}}" wx:key="{{item.id}}">
+      <view class="one-card" data-id="{{item.id}}" bindtap="handleTapCard" style="background-color:{{item.checkedColor}};box-shadow: 0rpx 8rpx 16rpx rgba({{item.checkedColorRgbArr[0]}},{{item.checkedColorRgbArr[1]}},{{item.checkedColorRgbArr[2]}},{{shadowOpacity}});{{item.cardStyle}}"
+        bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
+        <text class='days-title'>{{item.name}}</text>
+        <text wx:if="{{item.note}}" class='days-note'>{{item.note}}</text>
+        <text wx:if="{{item.datatag && item.date}}" class='days-time'>{{item.datatag}}{{item.date}}</text>
+        <text wx:if="{{item.msg}}" class='days-msg'>{{item.msg}}</text>
+        <text class='days-num'>{{item.diffnum}}</text>
+      </view>
+      <view class="day-operation" catchtap="delDay" catchtouchstart='delDay' data-id="{{item.id}}">
+        <view class="del">
+          <i class="iconfont icon-del"></i>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+
+    <view class="home-operations">
+      <view class="one-card card-msg" wx:if="{{pastdayslist.length==0}}">
+        <view class="card-triangle-down"></view>
+        <text class='days-title msg-title'>有值得纪念的过去的日子吗？\n点击加号，在 Big Days记录你的美好时光！</text>
+      </view>
+      <view class='home-operation' wx:if="{{pastdayslist.length>1}}">
+        <i class="iconfont icon-sort" bindtap="sortList"></i>
+      </view>
+      <view class='home-operation'>
+        <i class="iconfont icon-add" bindtap="addDay"></i>
+      </view>
+    </view>
+
+  </view>
+</view>

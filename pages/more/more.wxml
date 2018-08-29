@@ -1,0 +1,10 @@
+<!--pages/more/more.wxml-->
+<view class="container">
+  <view class="card" wx:for="{{morelist}}" wx:key="{{item.id}}">
+    <view class="one-card {{index % 2 == 0 ? 'yellow':'black'}}" data-id="{{item.id}}" bindtap="clickMore">
+      <text class='days-title'>{{item.name}}</text>
+      <text class='days-title'>——</text>
+      <text wx:if="{{item.note}}" class='days-title msg-title'>{{item.note}}</text>
+    </view>
+  </view>
+</view>

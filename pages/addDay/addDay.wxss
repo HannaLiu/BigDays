@@ -1,0 +1,18 @@
+/* pages/addDay/addDay.wxss */
+
+.textarea {
+  width: auto;
+}
+
+.picker {
+  padding-left: 200rpx;
+}
+
+.color-more {
+  float: right;
+  padding-top: 50rpx;
+}
+
+.more {
+  font-size: 80rpx;
+}
